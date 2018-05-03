@@ -1,4 +1,8 @@
-var barColor = ['#00C800','#FFD3D8', '#79D3C8', '#D2DCDC', '#641E78', '#FF4B7D'];
+var barColor = ['#FFFFFF','#cccccc',
+                '#00C800','#32A532', '#FFD3D8', '#FF4B7D', '#FE9326',
+                '#641E78','#79D3C8', '#0F418C', '#465055', '#0F1112', '#647378',
+                '#7D9196','#D2DCDC', '#0F418C', '#E6EBEB', '#E13241'
+            ];
 var numberOfVariants = 1;
 
 for (var i = 0; i < barColor.length; i++){
@@ -6,24 +10,11 @@ for (var i = 0; i < barColor.length; i++){
     color.id = 'x' + i;
     color.className = 'hue';
     document.getElementById('swatch'). appendChild(color);
-    var varyBy = 1/(numberOfVariants * 2 +1);
-    var currentVariance = 0;
-    for (var v = 0; v < numberOfVariants * 2 + 1; v++){
-        currentVariance += varyBy;
-        var hue = document.createElement('div');
-        hue.id = 'color' + i + 'var' + v;
-        hue.className = 'colorSwatch';
-        if(v > numberOfVariants)
-            hue.style.background = blendColors(barColor[i], '#FFFFFF', currentVariance);
-        else if(v < numberOfVariants){
-            hue.style.background = blendColors('#0000FF', barColor[i], currentVariance);
-        }
-        else{
-            hue.style.background = barColor[i];
-            varyBy *= -1;
-        }
-        document.getElementById(color.id).appendChild(hue);
-    }
+    var hue = document.createElement('div');
+    hue.id = 'color' + i;
+    hue.className = 'colorSwatch';
+    hue.style.background = barColor[i];
+    document.getElementById(color.id).appendChild(hue);
 }
 
 function blendColors(c0, c1, p) {
