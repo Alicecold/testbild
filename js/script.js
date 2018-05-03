@@ -1,4 +1,4 @@
-var barColor = ['#FFFFFF','#cccccc',
+var barColor = ['#FFF','#CCC',
                 '#00C800','#32A532', '#FFD3D8', '#FF4B7D', '#FE9326',
                 '#641E78','#79D3C8', '#0F418C', '#465055', '#0F1112', '#647378',
                 '#7D9196','#D2DCDC', '#0F418C', '#E6EBEB', '#E13241'
@@ -11,10 +11,15 @@ for (var i = 0; i < barColor.length; i++){
     color.className = 'hue';
     document.getElementById('swatch'). appendChild(color);
     var hue = document.createElement('div');
+    var text = document.createElement('p');
+    var textNode = document.createTextNode(barColor[i]); 
+    text.appendChild(textNode);
+    text.style.margin = '0';
     hue.id = 'color' + i;
     hue.className = 'colorSwatch';
     hue.style.background = barColor[i];
     document.getElementById(color.id).appendChild(hue);
+    document.getElementById(hue.id).appendChild(text);
 }
 
 function blendColors(c0, c1, p) {
