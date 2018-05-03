@@ -1,8 +1,10 @@
 .colorSwatch{
     width: 100px;
     height: 100px;
+    display: inline-block;
 }
 
-.hue{
-    display: inline-block;
+.label{
+    text-shadow: 0.5px 0.5px #cccccc;
+    margin: 0;
 }
