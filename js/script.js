@@ -15,6 +15,7 @@ for (var i = 0; i < barColor.length; i++){
     var textNode = document.createTextNode(barColor[i]); 
     text.appendChild(textNode);
     text.style.margin = '0';
+    text.style.textShadow = '0.5px 0.5px #cccccc';
     hue.id = 'color' + i;
     hue.className = 'colorSwatch';
     hue.style.background = barColor[i];
