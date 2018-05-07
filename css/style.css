@@ -1,3 +1,15 @@
+
+body{
+    background: black;
+}
+
+.invisible{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+}
 .colorSwatch{
     width: 100px;
     height: 100px;
